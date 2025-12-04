@@ -48,7 +48,7 @@ const RejyPage = () => {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Featured Card - Availability */}
-          <div className="lg:col-span-3 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+          <div className="lg:col-span-3 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-8 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
             <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-2">
               🚀 Available for Freelance Projects
             </h2>
