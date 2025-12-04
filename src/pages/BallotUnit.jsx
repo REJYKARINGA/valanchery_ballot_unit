@@ -69,7 +69,7 @@ export default function BallotUnit() {
   }
 
   const candidates = [
-    { number: 1, name: 'ആച്ചിക്കുളത്ത് അബൂബക്കർ ഹാജി', party: '', symbol: '☂️' },
+    { number: 1, name: 'U മുജീബ് റഹ്മാൻ', party: '', symbol: '/umbrella.png' },
     { number: 2, name: '', party: '', symbol: '' },
     { number: 3, name: '', party: '', symbol: '' },
     { number: 4, name: '', party: '', symbol: '' },
@@ -135,7 +135,15 @@ export default function BallotUnit() {
                           <span className="line-clamp-2">{candidate.name}</span>
                         )}
                         {candidate.symbol && (
-                          <span className="text-xl sm:text-3xl flex-shrink-0">{candidate.symbol}</span>
+                          candidate.symbol.startsWith('/') ? (
+                            <img 
+                              src={candidate.symbol} 
+                              alt="Candidate symbol" 
+                              className="w-6 h-6 sm:w-8 sm:h-8 object-cover"
+                            />
+                          ) : (
+                            <span className="text-xl sm:text-3xl flex-shrink-0">{candidate.symbol}</span>
+                          )
                         )}
                       </>
                     )}

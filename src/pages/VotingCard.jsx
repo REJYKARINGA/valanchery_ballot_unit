@@ -61,7 +61,7 @@ export default function VotingCard() {
               <div>
               <div className="">
                 <img
-                  src="/haji_3.png"
+                  src="/mujeeb_2.jpg"
                   alt="Candidate"
                   className="w-full h-auto max-h-96 object-contain"
                 />
@@ -81,13 +81,13 @@ export default function VotingCard() {
                 </div>
 
                 <h5 className="text-2xl font-bold text-gray-900 mb-1">
-                  ആച്ചിക്കുളത്ത് 
+                  U മുജീബ് 
                 </h5>
                 <h4 className="text-xl font-bold text-gray-900 mb-2">
-                  അബൂബക്കർ ഹാജി
+                  റഹ്മാൻ
                 </h4>
-                <p className="text-white text-sm font-medium">Marakkara</p>
-                <p className="text-white text-sm font-medium">WARD: 8</p>
+                <p className="text-white text-sm font-medium">Valanchery Municipality</p>
+                <p className="text-white text-sm font-medium">Ward: 20</p>
               </div>
               
               {/* Golden Ribbon */}
