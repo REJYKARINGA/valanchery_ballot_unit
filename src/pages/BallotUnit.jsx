@@ -69,8 +69,8 @@ export default function BallotUnit() {
   }
 
   const candidates = [
-    { number: 1, name: 'U മുജീബ് റഹ്മാൻ', party: '', symbol: '/umbrella.png' },
-    { number: 2, name: '', party: '', symbol: '' },
+    { number: 1, name: '', party: '', symbol: '' },
+    { number: 2, name: 'U മുജീബ് റഹ്മാൻ', party: '', symbol: '/umbrella.png' },
     { number: 3, name: '', party: '', symbol: '' },
     { number: 4, name: '', party: '', symbol: '' },
     { number: 5, name: '', party: '', symbol: '' },
