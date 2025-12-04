@@ -43,7 +43,7 @@ export default function BallotUnit() {
     let timer;
     if (showSuccess) {
       timer = setTimeout(() => {
-        window.location.href = '/voting';
+        window.location.href = '/confirmation';
       }, 3000);
     }
     return () => clearTimeout(timer);
