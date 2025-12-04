@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function BallotUnit() {
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [activeTab, setActiveTab] = useState('ward');
   const [pressedButton, setPressedButton] = useState(null);
-  const beepSoundRef = useRef(null);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleVote = (candidateNumber) => {
     // Play beep sound
@@ -17,7 +17,38 @@ export default function BallotUnit() {
     }, 300);
 
     setSelectedCandidate(candidateNumber);
+    
+    // Show success page
+    setShowSuccess(true);
   };
+
+  // Redirect to /voting after 3 seconds when showSuccess is true
+  useEffect(() => {
+    let timer;
+    if (showSuccess) {
+      timer = setTimeout(() => {
+        window.location.href = '/voting';
+      }, 3000); // 3 seconds delay
+    }
+    return () => clearTimeout(timer);
+  }, [showSuccess]);
+
+  // If showSuccess is true, render the loader page
+  if (showSuccess) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white p-5 flex justify-center items-center">
+        <div className="w-full max-w-3xl text-center">
+          <div className="flex justify-center mb-6">
+            <img src="/confirmed.gif" alt="Loading" className="w-32 h-32 mx-auto" />
+          </div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Processing...</h2>
+          <p className="text-xl font-semibold text-blue-600 mb-1">Vote Successfully Completed</p>
+          <p className="text-lg text-gray-600">നിങ്ങളുടെ വോട്ട് വിജയകരമായി പൂർത്തീകരിച്ചു</p>
+          <p className="text-md text-gray-500 mt-4">Redirecting to dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
   const candidates = [
     { number: 1, name: 'അബൂബക്കൽ ആച്ചിക്കുളത്ത്', party: '', symbol: '☂️' },
