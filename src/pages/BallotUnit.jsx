@@ -117,6 +117,16 @@ export default function BallotUnit() {
               </div>
               <div className="text-2xl font-bold text-black">Ballot Unit 1</div>
             </div>
+            
+            <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-6 rounded">
+              <div className="flex">
+                <div className="ml-3">
+                  <p className="text-sm text-yellow-700">
+                    <strong>Demo Only:</strong> This is a demonstration electronic voting machine. No actual votes are recorded. This system is for demonstration purposes only.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <div>
               {candidates.map((candidate) => (

@@ -55,7 +55,10 @@ export default function HomePage() {
 
                     <div className="mt-10 pt-8 border-t-2 border-white border-opacity-20 animate-fade-in">
                         <p className="text-white text-lg font-semibold uppercase tracking-widest">
-                            Developed for democratic elections
+                            Demo Electronic Voting Machine - For Demonstration Purposes Only
+                        </p>
+                        <p className="text-yellow-300 text-sm mt-2 font-medium">
+                            This is a demonstration application only and not a real voting system. No actual votes are recorded.
                         </p>
                     </div>
                 </div>
