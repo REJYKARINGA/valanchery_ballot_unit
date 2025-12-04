@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/rejy" element={<RejyPage />} />
       <Route path="/ballot" element={<BallotUnit />} />
-      <Route path="/voting" element={<VotingCard />} />
+      <Route path="/confirmation" element={<VotingCard />} />
       {/* Catch-all route for 404 pages */}
       <Route path="*" element={<NotFound />} />
     </Routes>
