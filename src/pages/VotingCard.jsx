@@ -1,8 +1,15 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 export default function VotingCard() {
+  const navigate = useNavigate();
+  
+  const handleVoteAgain = () => {
+    navigate('/ballot');
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Load Keraleeyam Font */}
@@ -93,9 +100,23 @@ export default function VotingCard() {
             
             </div>
 
+            {/* Disclaimer */}
+            <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 mt-6 rounded">
+              <div className="flex">
+                <div className="ml-3">
+                  <p className="text-sm text-yellow-700">
+                    <strong>Demo Only:</strong> This is a demonstration voting card. No actual votes are recorded. This system is for demonstration purposes only.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
             {/* Vote Again Button */}
             <div className="mt-6 text-center">
-              <button className="bg-white text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+              <button 
+                onClick={handleVoteAgain}
+                className="bg-white text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              >
                 Vote Again
               </button>
             </div>
