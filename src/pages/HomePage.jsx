@@ -21,7 +21,7 @@ export default function HomePage() {
                         ഇലക്ട്രോണിക് വോട്ടിംഗ് മെഷീൻ
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
                         <Link 
                             to="/ballot" 
                             className="bg-white rounded-3xl p-6 md:p-8 text-decoration-none transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-blue-500 relative overflow-hidden"
@@ -45,12 +45,28 @@ export default function HomePage() {
                                 👤
                             </div>
                             <h2 className="text-2xl font-extrabold text-gray-800 mb-3">
-                                Rejy's Page
+                                Rejy's Portfolio
                             </h2>
                             <p className="text-gray-600 text-sm md:text-base font-medium leading-relaxed">
-                                Custom page
+                                Freelance Developer & Full Stack Services
                             </p>
                         </Link>
+                        
+                        {/* Freelancer Card */}
+                        <div className="bg-white rounded-3xl p-6 md:p-8 text-decoration-none transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-purple-500 relative overflow-hidden">
+                            <div className="text-5xl mb-4 filter drop-shadow-md">
+                                💼
+                            </div>
+                            <h2 className="text-2xl font-extrabold text-gray-800 mb-3">
+                                Freelance Services
+                            </h2>
+                            <p className="text-gray-600 text-sm md:text-base font-medium leading-relaxed">
+                                Full Stack Development with React, Laravel & Node.js
+                            </p>
+                            <div className="mt-4 text-purple-600 font-bold text-sm">
+                                Available for Projects
+                            </div>
+                        </div>
                     </div>
 
                     <div className="mt-10 pt-8 border-t-2 border-white border-opacity-20 animate-fade-in">
