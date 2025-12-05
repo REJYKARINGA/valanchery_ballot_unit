@@ -1,13 +1,39 @@
-import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { CheckCircle, X, Phone, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 export default function VotingCard() {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
   
+  useEffect(() => {
+    // Show modal after 5 seconds
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleVoteAgain = () => {
     navigate('/ballot');
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const handleWhatsAppClick = () => {
+    // Open WhatsApp chat with the provided number
+    window.open('https://wa.me/917994870262', '_blank');
+    closeModal();
+  };
+
+  const handleCallClick = () => {
+    // Initiate phone call
+    window.location.href = 'tel:+917994870262';
+    closeModal();
   };
 
   return (
@@ -18,6 +44,53 @@ export default function VotingCard() {
           @import url('https://fonts.googleapis.com/css2?family=Keraleeyam&display=swap');
         `}
       </style>
+      
+      {/* Popup Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 relative overflow-hidden">
+            {/* Decorative header */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-center">
+              <h3 className="text-xl font-bold text-white">Create Your Member Demo EVM</h3>
+            </div>
+            
+            <button 
+              onClick={closeModal}
+              className="absolute top-3 right-3 text-white hover:text-gray-200 z-10"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <div className="p-6">
+              <p className="text-gray-700 mb-6 text-center">
+                Contact us for your personalized EVM demo experience
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-md"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Chat on WhatsApp
+                </button>
+                
+                <button
+                  onClick={handleCallClick}
+                  className="flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-md"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call Now
+                </button>
+              </div>
+              
+              <div className="text-center text-sm text-gray-500">
+                <p>Contact: +91 7994870262</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       
       <div className="flex-grow bg-gradient-to-b from-white via-gray-300 to-gray-500 flex items-center justify-center p-4">
         <div className="max-w-md w-full relative">
